@@ -1,16 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import unsplash from './api/unsplash';
+import Photo from '../src/components/Photo';
 
 function App() {
+	const [images, setImages] = useState([]);
+
 	useEffect(() => {
-		const getPhotosUnsplash = async () => {
-			const response = await unsplash.get('photos');
-			console.log(response);
+		const getPhotosFromUnsplash = async () => {
+			try {
+				const response = await unsplash.get('photos');
+				if (response.status === 200) {
+					setImages(response.data);
+				}
+			} catch (error) {
+				console.log(error);
+			}
 		};
-		getPhotosUnsplash();
+		getPhotosFromUnsplash();
 	}, []);
 
-	return <div></div>;
+	return (
+		<div>
+			<Photo images={images} />
+		</div>
+	);
 }
 
 export default App;
