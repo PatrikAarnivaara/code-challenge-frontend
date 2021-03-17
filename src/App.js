@@ -14,6 +14,7 @@ function App() {
 				}
 			} catch (error) {
 				console.log(error);
+				/* add message to client */
 			}
 		};
 		getPhotosFromUnsplash();
