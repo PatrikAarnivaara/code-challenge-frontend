@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import unsplash from './api/unsplash';
-import Photo from '../src/components/Photo';
+import Photo from './components/Photo/Photo';
 
 function App() {
 	const [images, setImages] = useState([]);
