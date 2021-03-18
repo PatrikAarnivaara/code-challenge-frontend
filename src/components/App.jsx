@@ -1,13 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import unsplash from './api/unsplash';
-import Photo from './components/Photo/Photo';
+import React, { useEffect, useState } from 'react';
+import unsplash from '../api/unsplash';
+import Photo from './Photo/Photo';
 
 function App() {
 	const [images, setImages] = useState([]);
-
-	function sum(a, b) {
-		return a + b;
-	}
 
 	useEffect(() => {
 		const getPhotosFromUnsplash = async () => {
@@ -27,7 +23,6 @@ function App() {
 	return (
 		<div>
 			<Photo images={images} />
-			
 		</div>
 	);
 }

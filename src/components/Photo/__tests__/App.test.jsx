@@ -1,4 +1,4 @@
-import unsplash from './api/unsplash';
+import unsplash from '../../../api/unsplash';
 
 const imageData = {
 	full: expect.any(String),
@@ -7,6 +7,10 @@ const imageData = {
 	small: expect.any(String),
 	thumb: expect.any(String),
 };
+
+/* test("renders without crashing", () => {
+	shallow(<App />);
+  }); */
 
 test('check length of array', async () => {
 	const response = await unsplash.get('photos');
