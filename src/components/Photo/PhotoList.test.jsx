@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import PhotoList from '../PhotoList';
+import PhotoList from './PhotoList';
 
 test('Does PhotoList render props', () => {
 	const unsplashData = [
@@ -75,5 +75,5 @@ test('Does PhotoList render props', () => {
 
 	const component = renderer.create(<PhotoList images={unsplashData} />);
 	let tree = component.toJSON();
-	expect(tree).toMatchSnapshot();
+	expect(tree).toMatchSnapshot(); 
 });
