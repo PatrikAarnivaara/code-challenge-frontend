@@ -3,16 +3,24 @@ import unsplash from '../api/unsplash';
 import Photo from './Photo/Photo';
 import { createUseStyles } from 'react-jss';
 
+/* const maxWidth = 600; */
 const useStyles = createUseStyles({
 	container: {
 		margin: 'auto',
-		padding: '2em',
+		padding: '2em'
 	},
+	/* [`@media (max-width: ${maxWidth}px)`]: {
+		container: {
+			width: '100%',
+			padding: '1em'
+		},
+	}, */
 });
 
 function App() {
-	const [images, setImages] = useState([]);
 	const classes = useStyles();
+	const [images, setImages] = useState([]);
+
 	const getPhotosFromUnsplash = async () => {
 		try {
 			const response = await unsplash.get('photos');
