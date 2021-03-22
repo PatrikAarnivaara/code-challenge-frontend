@@ -1,13 +1,10 @@
 import React from 'react';
-import LazyLoad from 'react-lazyload';
 
 const PhotoListDetail = ({ urls, description }) => {
 	const renderDetail = () => {
 		return (
 			<div>
-				<LazyLoad>
-					<img src={urls} alt={description} />
-				</LazyLoad>
+				<img src={urls} alt={description} loading="lazy" style={{ width: '500px', height: 'auto' }} />
 			</div>
 		);
 	};

@@ -8,7 +8,7 @@ const PhotoList = ({ images }) => {
 				? images.map((image) => (
 						<PhotoListDetail 
 						key={image.id} 
-						urls={image.urls.small} 
+						urls={image.urls.raw} 
 						description={image.description} 
 						/>
 				  ))
