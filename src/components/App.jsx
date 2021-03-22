@@ -3,18 +3,11 @@ import unsplash from '../api/unsplash';
 import Photo from './Photo/Photo';
 import { createUseStyles } from 'react-jss';
 
-/* const maxWidth = 600; */
 const useStyles = createUseStyles({
 	container: {
 		margin: 'auto',
 		padding: '2em'
 	},
-	/* [`@media (max-width: ${maxWidth}px)`]: {
-		container: {
-			width: '100%',
-			padding: '1em'
-		},
-	}, */
 });
 
 function App() {
