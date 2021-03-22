@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import unsplash from '../api/unsplash';
 import Photo from './Photo/Photo';
+import { createUseStyles } from 'react-jss';
+
+const useStyles = createUseStyles({
+	container: {
+		margin: 'auto',
+		padding: '2em',
+	},
+});
 
 function App() {
 	const [images, setImages] = useState([]);
-
+	const classes = useStyles();
 	const getPhotosFromUnsplash = async () => {
 		try {
 			const response = await unsplash.get('photos');
@@ -23,7 +31,7 @@ function App() {
 	}, []);
 
 	return (
-		<div>
+		<div className={classes.container}>
 			<Photo images={images} />
 		</div>
 	);

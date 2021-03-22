@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-const useStyles = createUseStyles({ image: { width: '300px', height: 'auto' } });
+const useStyles = createUseStyles({ image: { maxWidth: '300px', height: 'auto' } });
 
 const PhotoListDetail = ({ urls, description }) => {
 	const classes = useStyles();
