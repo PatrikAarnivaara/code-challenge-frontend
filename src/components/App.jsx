@@ -5,18 +5,19 @@ import Photo from './Photo/Photo';
 function App() {
 	const [images, setImages] = useState([]);
 
-	useEffect(() => {
-		const getPhotosFromUnsplash = async () => {
-			try {
-				const response = await unsplash.get('photos');
-				if (response.status === 200) {
-					setImages(response.data);
-				}
-			} catch (error) {
-				console.log(error);
-				/* add message to client */
+	const getPhotosFromUnsplash = async () => {
+		try {
+			const response = await unsplash.get('photos');
+			if (response.status === 200) {
+				setImages(response.data);
 			}
-		};
+		} catch (error) {
+			console.log(error);
+			/* add message to client */
+		}
+	};
+
+	useEffect(() => {
 		getPhotosFromUnsplash();
 	}, []);
 

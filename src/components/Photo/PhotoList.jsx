@@ -1,11 +1,16 @@
 import React from 'react';
+import PhotoListDetail from './PhotoListDetail';
 
 const PhotoList = ({ images }) => {
 	return (
-		<div>
+		<div className="photo-list-wrapper">
 			{images.length > 0
 				? images.map((image) => (
-						<img key={image.id} src={image.urls.small} alt={image.description} />
+						<PhotoListDetail 
+						key={image.id} 
+						urls={image.urls.small} 
+						description={image.description} 
+						/>
 				  ))
 				: []}
 		</div>
