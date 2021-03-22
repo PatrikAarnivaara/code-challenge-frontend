@@ -5,8 +5,9 @@ import { createUseStyles } from 'react-jss';
 const useStyles = createUseStyles({
 	grid: {
 		display: 'grid',
-		gridGap: '1em',
-		gridTemplateColumns: 'repeat(4, 1fr)',
+		gridTemplateColumns: 'repeat(4, 4fr)',
+		/* gridTemplateRows: 'repeat(8, 20vw)', */
+		gridGap: '15px',
 	},
 });
 
