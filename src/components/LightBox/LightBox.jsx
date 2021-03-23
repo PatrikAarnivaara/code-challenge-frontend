@@ -12,7 +12,7 @@ const useStyles = createUseStyles({
 		backgroundColor: 'rgba(255, 255, 255, 0.5)',
 		display: 'flex',
 		alignItems: 'center',
-		justifyContent: 'space-between',
+		justifyContent: 'space-evenly',
 	},
 	lightboxImg: {
 		height: '80vh',
@@ -23,12 +23,12 @@ const useStyles = createUseStyles({
 
 const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 	const classes = useStyles();
-    
+
 	const showNextImage = (e) => {
 		e.stopPropagation();
 		let currentIndex = images.indexOf(imageToShow);
 		if (currentIndex >= images.length - 1) {
-            setImageToShow(images[0]);
+			setImageToShow(images[0]);
 		} else {
 			let nextImage = images[currentIndex + 1];
 			setImageToShow(nextImage);
@@ -39,7 +39,7 @@ const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 		e.stopPropagation();
 		let currentIndex = images.indexOf(imageToShow);
 		if (currentIndex <= 0) {
-            setImageToShow(images[images.length - 1])
+			setImageToShow(images[images.length - 1]);
 		} else {
 			let nextImage = images[currentIndex - 1];
 			setImageToShow(nextImage);
