@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
-	image: { objectFit: 'cover', cursor: 'pointer' },
+	image: { objectFit: 'cover', cursor: 'pointer',  },
 });
 
 const PhotoListDetail = ({ image, showImage }) => {

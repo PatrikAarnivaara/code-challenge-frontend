@@ -4,13 +4,19 @@ import GridLoader from 'react-spinners/GridLoader';
 import unsplash from '../api/unsplash';
 import Photo from './Photo/Photo';
 import { createUseStyles } from 'react-jss';
+import { css } from '@emotion/react';
 
 const useStyles = createUseStyles({
 	container: {
 		margin: 'auto',
-		padding: '2em',
+		padding: '1em',
 	},
 });
+
+const override = css`
+	display: block;
+	margin: 0 auto;
+`;
 
 function App() {
 	const classes = useStyles();
@@ -37,12 +43,11 @@ function App() {
 
 	return (
 		<div className={classes.container}>
-			{/* <GridLoader/> */}
 			<InfiniteScroll
 				pageStart={0}
 				loadMore={getPhotosFromUnsplash}
 				hasMore={true || false}
-				loader={<GridLoader key={0} />}
+				loader={<GridLoader key={0} css={override} />}
 			>
 				{loaded ? <Photo images={images} /> : ''}
 			</InfiniteScroll>
