@@ -79,22 +79,7 @@ const PhotoList = ({ images }) => {
 	return (
 		<div className={classes.grid}>
 			{images.length > 0
-				? images.map((image, index) => (
-						<img
-							key={index}
-							onClick={() => {
-								showImage(image);
-							}}
-							src={image.urls.regular}
-							alt={image.description}
-						/>
-						/* <PhotoListDetail
-							key={image.id}
-							urls={image.urls.regular}
-							description={image.description}
-							showImage={showImage}
-						/> */
-				  ))
+				? images.map((image, index) => <PhotoListDetail key={index} showImage={showImage} image={image} />)
 				: []}
 			{lightboxDisplay ? (
 				<div className={classes.lightbox} onClick={hideLightBox}>
