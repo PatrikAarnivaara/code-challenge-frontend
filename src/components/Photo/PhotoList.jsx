@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
 	grid: {
 		display: 'grid',
 		gridTemplateColumns: 'repeat(4, 4fr)',
-		gridTemplateRows: 'repeat(4, 30vw)',
+		gridTemplateRows: 'repeat(4, 20vw)',
 		gridGap: '15px',
 	},
 	[`@media (max-width: ${maxWidth}px)`]: {

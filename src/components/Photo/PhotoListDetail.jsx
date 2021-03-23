@@ -9,21 +9,20 @@ const PhotoListDetail = ({ image, showImage }) => {
 	const classes = useStyles();
 	const { urls, description } = image;
 
-	const renderDetail = () => {
+	const renderImageDetail = () => {
 		return (
 			<img
 				className={classes.image}
 				onClick={() => showImage(image)}
 				src={urls.regular}
 				alt={description}
-				loading="lazy"
 				style={{ width: '100%', height: '100%' }}
 			/>
 		);
 	};
 	/* TODO: spinner if no image data */
-	if (image.urls) {
-		return renderDetail();
+	if (image.urls.regular) {
+		return renderImageDetail();
 	} else {
 		return <span>No images yet</span>;
 	}
