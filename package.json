@@ -10,6 +10,7 @@
     "dotenv": "^8.2.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.1",
+    "loading-attribute-polyfill": "^2.0.0-rc.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-jss": "^10.6.0",
