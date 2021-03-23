@@ -3,12 +3,11 @@ import PhotoListDetail from './PhotoListDetail';
 import LightBox from '../LightBox/LightBox';
 import { createUseStyles } from 'react-jss';
 
-const maxWidth = 700;
 const useStyles = createUseStyles({
 	grid: {
 		display: 'grid',
-		gridTemplateColumns: 'repeat( auto-fill, minmax(250px, 1fr) )',
-		gridGap: '10px',
+		gridTemplateColumns: 'repeat( auto-fit, minmax(min(100%, 250px), 1fr) )',
+		gridGap: '15px',
 	},
 });
 
