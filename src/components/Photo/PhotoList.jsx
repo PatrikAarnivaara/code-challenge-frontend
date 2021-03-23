@@ -49,8 +49,7 @@ const PhotoList = ({ images }) => {
 		setLightBoxDisplay(false);
 	};
 
-	//show next image in lightbox
-	const showNext = (e) => {
+	const showNextImage = (e) => {
 		e.stopPropagation();
 		console.log('index ->', images.indexOf(imageToShow));
 		/* indexOf does not find image id in array */
@@ -64,8 +63,7 @@ const PhotoList = ({ images }) => {
 		}
 	};
 
-	//show previous image in lightbox
-	const showPrev = (e) => {
+	const showPrevImage = (e) => {
 		e.stopPropagation();
 		let currentIndex = images.indexOf(imageToShow);
 		if (currentIndex <= 0) {
@@ -83,13 +81,13 @@ const PhotoList = ({ images }) => {
 				: []}
 			{lightboxDisplay ? (
 				<div className={classes.lightbox} onClick={hideLightBox}>
-					<button onClick={showPrev}>⭠</button>
+					<button onClick={showPrevImage}>⭠</button>
 					<img
 						className={classes.lightboxImg}
 						src={imageToShow.urls.regular}
 						alt={imageToShow.description}
 					></img>
-					<button onClick={showNext}>⭢</button>
+					<button onClick={showNextImage}>⭢</button>
 				</div>
 			) : (
 				''
