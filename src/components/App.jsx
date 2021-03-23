@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
-import ClipLoader from "react-spinners/ClipLoader";
+import GridLoader from "react-spinners/GridLoader";
 import unsplash from '../api/unsplash';
 import Photo from './Photo/Photo';
 import { createUseStyles } from 'react-jss';
@@ -37,12 +37,12 @@ function App() {
 
 	return (
 		<div className={classes.container}>
-			<ClipLoader/>
+			<GridLoader/>
 			<InfiniteScroll
 				pageStart={0}
 				loadMore={getPhotosFromUnsplash}
 				hasMore={true || false}
-				loader={<ClipLoader key={0} />}
+				loader={<GridLoader key={0} />}
 			>
 				{loaded ? <Photo images={images} /> : ''}
 			</InfiniteScroll>
