@@ -7,14 +7,8 @@ const maxWidth = 700;
 const useStyles = createUseStyles({
 	grid: {
 		display: 'grid',
-		gridTemplateColumns: 'repeat(4, 4fr)',
-		gridTemplateRows: 'repeat(2, 20vw)',
+		gridTemplateColumns: 'repeat( auto-fill, minmax(250px, 1fr) )',
 		gridGap: '10px',
-	},
-	[`@media (max-width: ${maxWidth}px)`]: {
-		grid: {
-			gridTemplateColumns: 'repeat(2, 4fr)',
-		},
 	},
 });
 

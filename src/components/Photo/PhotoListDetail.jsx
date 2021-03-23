@@ -14,7 +14,7 @@ const PhotoListDetail = ({ image, showImage }) => {
 			<img
 				className={classes.image}
 				onClick={() => showImage(image)}
-				src={urls.small}
+				src={urls.regular}
 				alt={description}
 				style={{ width: '100%', height: '100%' }}
 			/>
