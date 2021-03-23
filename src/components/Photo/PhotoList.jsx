@@ -41,7 +41,6 @@ const PhotoList = ({ images }) => {
 				<LightBox
 					imageToShow={imageToShow}
 					setImageToShow={setImageToShow}
-					setLightBoxDisplay={setLightBoxDisplay}
 					hideLightBox={hideLightBox}
 					images={images}
 				/>

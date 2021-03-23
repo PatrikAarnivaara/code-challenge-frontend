@@ -1,23 +1,23 @@
 import React from 'react';
-/* import { createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
-	image: {},
-}); */
+	image: { objectFit: 'cover', cursor: 'pointer' },
+});
 
 const PhotoListDetail = ({ image, showImage }) => {
-	/* 	const classes = useStyles(); */
-	/* const { urls, description } = image; */
+	const classes = useStyles();
+	const { urls, description } = image;
 
 	const renderDetail = () => {
 		return (
 			<img
-				/* className={classes.image} */
+				className={classes.image}
 				onClick={() => showImage(image)}
-				src={image.urls.regular}
-				alt={image.description}
+				src={urls.regular}
+				alt={description}
 				loading="lazy"
-				style={{ width: '100%', height: '100%', objectFit: 'cover', cursor: 'pointer' }}
+				style={{ width: '100%', height: '100%' }}
 			/>
 		);
 	};
