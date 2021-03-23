@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import InfiniteScroll from 'react-infinite-scroller';
+import ClipLoader from "react-spinners/ClipLoader";
 import unsplash from '../api/unsplash';
 import Photo from './Photo/Photo';
 import { createUseStyles } from 'react-jss';
@@ -20,7 +21,7 @@ function App() {
 		try {
 			const response = await unsplash.get('photos');
 			if (response.status === 200) {
-				setImages(() => [...images, ...response.data]);
+				setImages([...images, ...response.data]);
 				setIsLoaded(true);
 			}
 		} catch (error) {
@@ -31,20 +32,17 @@ function App() {
 
 	useEffect(() => {
 		getPhotosFromUnsplash();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
 		<div className={classes.container}>
+			<ClipLoader/>
 			<InfiniteScroll
-				dataLength={images}
-				next={() => getPhotosFromUnsplash()}
-				hasMore={true}
-				loader={
-					<img
-						src="https://res.cloudinary.com/chuloo/image/upload/v1550093026/scotch-logo-gif_jq4tgr.gif"
-						alt="loading"
-					/>
-				}
+				pageStart={0}
+				loadMore={getPhotosFromUnsplash}
+				hasMore={true || false}
+				loader={<ClipLoader key={0} />}
 			>
 				{loaded ? <Photo images={images} /> : ''}
 			</InfiniteScroll>
