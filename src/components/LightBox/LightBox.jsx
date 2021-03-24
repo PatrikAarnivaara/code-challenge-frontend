@@ -19,6 +19,46 @@ const useStyles = createUseStyles({
 		maxWidth: '90vw',
 		objectFit: 'cover',
 	},
+	nextBtn: {
+		cursor: 'pointer',
+		width: 'auto',
+		backgroundColor: 'Transparent',
+		border: 'none',
+		padding: '3em',
+		textAlign: 'center',
+		margin: '4px',
+		opacity: '0.6',
+		transition: '0.3s',
+		outline: 'none',
+	},
+	prevBtn: {
+		cursor: 'pointer',
+		width: 'auto',
+		backgroundColor: 'Transparent',
+		border: 'none',
+		padding: '3em',
+		textAlign: 'center',
+		margin: '4px',
+		opacity: '0.6',
+		transition: '0.3s',
+		outline: 'none',
+	},
+	nextArrow: {
+		border: 'solid black',
+		borderWidth: '0 4px 4px 0',
+		display: 'inline-block',
+		padding: '10px',
+		transform: 'rotate(135deg)',
+		webkitTransform: 'rotate(135deg)',
+	},
+	prevArrow: {
+		border: 'solid black',
+		borderWidth: '0 4px 4px 0',
+		display: 'inline-block',
+		padding: '10px',
+		transform: 'rotate(-45deg)',
+		webkitTransform: 'rotate(-45deg)',
+	},
 });
 
 const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
@@ -48,9 +88,13 @@ const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 
 	return (
 		<div className={classes.lightbox} onClick={hideLightBox}>
-			<button onClick={showPrevImage}>⭠</button>
+			<button className={classes.nextBtn} onClick={showPrevImage}>
+				<i className={classes.nextArrow}></i>
+			</button>
 			<img className={classes.lightboxImg} src={imageToShow.urls.regular} alt={imageToShow.description}></img>
-			<button onClick={showNextImage}>⭢</button>
+			<button className={classes.prevBtn} onClick={showNextImage}>
+				<i className={classes.prevArrow}></i>
+			</button>
 		</div>
 	);
 };
