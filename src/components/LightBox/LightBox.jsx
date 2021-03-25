@@ -2,6 +2,7 @@ import React from 'react';
 import ArrowButton from '../../UI/ArrowButton';
 import LightBoxImage from '../../UI/LightBoxImage';
 import Overlay from '../../UI/Overlay';
+import CloseButton from '../../UI/CloseButton';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -48,6 +49,7 @@ const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 
 	return (
 		<div className={classes.lightbox} onClick={hideLightBox}>
+			<CloseButton handleClose={hideLightBox} />
 			<ArrowButton handleClick={showPrevImage} degree="rotate(135deg)" />
 			<LightBoxImage regular={imageToShow.urls.regular} description={imageToShow.description} />
 			<ArrowButton handleClick={showNextImage} degree="rotate(-45deg)" />

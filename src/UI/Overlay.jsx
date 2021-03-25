@@ -26,7 +26,7 @@ const useStyles = createUseStyles({
 
 const Overlay = ({ imageMetaData }) => {
 	const classes = useStyles();
-	let year = dayjs(imageMetaData.created_at).format('YYYY');
+	const year = dayjs(imageMetaData.created_at).format('YYYY');
 	return (
 		<div className={classes.overlay}>
 			<span>
