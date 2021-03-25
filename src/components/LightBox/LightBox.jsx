@@ -1,6 +1,7 @@
 import React from 'react';
 import ArrowButton from '../../UI/ArrowButton';
 import LightBoxImage from '../../UI/LightBoxImage';
+import Overlay from '../../UI/Overlay';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -48,8 +49,9 @@ const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 	return (
 		<div className={classes.lightbox} onClick={hideLightBox}>
 			<ArrowButton handleClick={showPrevImage} degree="rotate(135deg)" />
-			<LightBoxImage regular={imageToShow.urls.regular} description={imageToShow.description}></LightBoxImage>
+			<LightBoxImage regular={imageToShow.urls.regular} description={imageToShow.description} />
 			<ArrowButton handleClick={showNextImage} degree="rotate(-45deg)" />
+			<Overlay imageMetaData={imageToShow} />
 		</div>
 	);
 };

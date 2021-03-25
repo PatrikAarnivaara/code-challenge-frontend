@@ -11,6 +11,6 @@ const useStyles = createUseStyles({
 
 function LightBoxImage({ regular, description }) {
 	const classes = useStyles();
-	return <img className={classes.lightboxImg} src={regular} alt={description}></img>;
+	return <img className={classes.lightboxImg} src={regular} alt={description} />;
 }
 export default LightBoxImage;
