@@ -1,4 +1,6 @@
 import React from 'react';
+import ArrowButton from '../../UI/ArrowButton';
+import LightBoxImage from '../../UI/LightBoxImage';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -10,54 +12,11 @@ const useStyles = createUseStyles({
 		width: '100%',
 		height: '100%',
 		backgroundColor: 'rgba(255, 255, 255, 0.5)',
-		display: 'flex',
+		display: 'grid',
+		gridTemplateColumns: 'repeat(3, 1fr)',
+		gridGap: '1em',
 		alignItems: 'center',
-		justifyContent: 'space-evenly',
-	},
-	lightboxImg: {
-		height: '80vh',
-		maxWidth: '90vw',
-		objectFit: 'cover',
-	},
-	nextBtn: {
-		cursor: 'pointer',
-		width: 'auto',
-		backgroundColor: 'Transparent',
-		border: 'none',
-		padding: '3em',
-		textAlign: 'center',
-		margin: '4px',
-		opacity: '0.6',
-		transition: '0.3s',
-		outline: 'none',
-	},
-	prevBtn: {
-		cursor: 'pointer',
-		width: 'auto',
-		backgroundColor: 'Transparent',
-		border: 'none',
-		padding: '3em',
-		textAlign: 'center',
-		margin: '4px',
-		opacity: '0.6',
-		transition: '0.3s',
-		outline: 'none',
-	},
-	nextArrow: {
-		border: 'solid black',
-		borderWidth: '0 4px 4px 0',
-		display: 'inline-block',
-		padding: '10px',
-		transform: 'rotate(135deg)',
-		webkitTransform: 'rotate(135deg)',
-	},
-	prevArrow: {
-		border: 'solid black',
-		borderWidth: '0 4px 4px 0',
-		display: 'inline-block',
-		padding: '10px',
-		transform: 'rotate(-45deg)',
-		webkitTransform: 'rotate(-45deg)',
+		justifyItems: 'center',
 	},
 });
 
@@ -88,13 +47,9 @@ const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 
 	return (
 		<div className={classes.lightbox} onClick={hideLightBox}>
-			<button className={classes.nextBtn} onClick={showPrevImage}>
-				<i className={classes.nextArrow}></i>
-			</button>
-			<img className={classes.lightboxImg} src={imageToShow.urls.regular} alt={imageToShow.description}></img>
-			<button className={classes.prevBtn} onClick={showNextImage}>
-				<i className={classes.prevArrow}></i>
-			</button>
+			<ArrowButton handleClick={showPrevImage} degree="rotate(135deg)" />
+			<LightBoxImage regular={imageToShow.urls.regular} description={imageToShow.description}></LightBoxImage>
+			<ArrowButton handleClick={showNextImage} degree="rotate(-45deg)" />
 		</div>
 	);
 };
