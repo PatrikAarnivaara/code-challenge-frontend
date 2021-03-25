@@ -14,11 +14,6 @@ const ArrowButton = ({ handleClick, degree }) => {
 			opacity: '0.6',
 			transition: '0.3s',
 			outline: 'none',
-			'&:hover': {
-				color: '#999',
-				textDecoration: 'none',
-				cursor: 'pointer',
-			},
 		},
 		arrow: {
 			border: 'solid black',
