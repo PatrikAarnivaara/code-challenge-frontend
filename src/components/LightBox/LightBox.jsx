@@ -1,4 +1,8 @@
 import React from 'react';
+import ArrowButton from '../../UI/ArrowButton';
+import LightBoxImage from '../../UI/LightBoxImage';
+import Overlay from '../../UI/Overlay';
+import CloseButton from '../../UI/CloseButton';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -10,14 +14,11 @@ const useStyles = createUseStyles({
 		width: '100%',
 		height: '100%',
 		backgroundColor: 'rgba(255, 255, 255, 0.5)',
-		display: 'flex',
+		display: 'grid',
+		gridTemplateColumns: 'repeat(3, 1fr)',
+		gridGap: '1em',
 		alignItems: 'center',
-		justifyContent: 'space-evenly',
-	},
-	lightboxImg: {
-		height: '80vh',
-		maxWidth: '90vw',
-		objectFit: 'cover',
+		justifyItems: 'center',
 	},
 });
 
@@ -48,9 +49,11 @@ const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 
 	return (
 		<div className={classes.lightbox} onClick={hideLightBox}>
-			<button onClick={showPrevImage}>⭠</button>
-			<img className={classes.lightboxImg} src={imageToShow.urls.regular} alt={imageToShow.description}></img>
-			<button onClick={showNextImage}>⭢</button>
+			<CloseButton handleClose={hideLightBox} />
+			<ArrowButton handleClick={showPrevImage} degree="rotate(135deg)" />
+			<LightBoxImage regular={imageToShow.urls.regular} description={imageToShow.description} />
+			<ArrowButton handleClick={showNextImage} degree="rotate(-45deg)" />
+			<Overlay imageMetaData={imageToShow} />
 		</div>
 	);
 };
