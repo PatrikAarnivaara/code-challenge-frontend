@@ -6,12 +6,12 @@ import { createUseStyles } from 'react-jss';
 const useStyles = createUseStyles({
 	overlay: {
 		position: 'absolute',
-		bottom: '0',
-		background: 'rgba(0, 0, 0, 0.5)',
+		bottom: '10%',
+		/* background: 'rgba(0, 0, 0, 0.5)', */
+		width: '10%',
 		color: 'white',
-		width: '50%',
 		transition: '.5s ease',
-		opacity: '0',
+		opacity: 1,
 		fontSize: '1rem',
 		padding: '1em',
 		textAlign: 'center',
@@ -29,11 +29,11 @@ const Overlay = ({ imageMetaData }) => {
 	const year = dayjs(imageMetaData.created_at).format('YYYY');
 	return (
 		<div className={classes.overlay}>
-			<span>
-				<span className={classes.name}>{imageMetaData.user.name}</span>,{' '}
+			<p className={classes.name}>{imageMetaData.user.name}</p>{' '}
+			<p>
 				{imageMetaData.user.location ? CapitalizeFirstLetter(imageMetaData.user.location) : 'No location found'}
-				, {year}
-			</span>
+			</p>
+			<p>{year}</p>
 		</div>
 	);
 };

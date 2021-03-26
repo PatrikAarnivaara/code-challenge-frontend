@@ -1,22 +1,23 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-const ArrowButton = ({ handleClick, degree }) => {
+const ArrowButton = ({ handleClick, degree, percentage }) => {
 	const useStyles = createUseStyles({
 		button: {
 			cursor: 'pointer',
 			width: 'auto',
 			backgroundColor: 'Transparent',
 			border: 'none',
-			padding: '2em',
+			padding: '1em',
 			textAlign: 'center',
-			margin: '4px',
-			opacity: '0.6',
+			margin: '0 -80px',
 			transition: '0.3s',
 			outline: 'none',
+			right: percentage,
+			zIndex: '1',
 		},
 		arrow: {
-			border: 'solid black',
+			border: 'solid white',
 			borderWidth: '0 4px 4px 0',
 			display: 'inline-block',
 			padding: '10px',

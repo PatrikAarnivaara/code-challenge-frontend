@@ -14,11 +14,14 @@ const useStyles = createUseStyles({
 		width: '100%',
 		height: '100%',
 		backgroundColor: 'rgba(255, 255, 255, 0.5)',
-		display: 'grid',
-		gridTemplateColumns: 'repeat(3, 1fr)',
-		gridGap: '1em',
+		display: 'flex',
 		alignItems: 'center',
-		justifyItems: 'center',
+		justifyContent: 'center',
+	},
+	controls: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
 	},
 });
 
@@ -50,10 +53,12 @@ const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 	return (
 		<div className={classes.lightbox} onClick={hideLightBox}>
 			<CloseButton handleClose={hideLightBox} />
-			<ArrowButton handleClick={showPrevImage} degree="rotate(135deg)" />
-			<LightBoxImage regular={imageToShow.urls.regular} description={imageToShow.description} />
-			<ArrowButton handleClick={showNextImage} degree="rotate(-45deg)" />
-			<Overlay imageMetaData={imageToShow} />
+			<div className={classes.controls}>
+				<ArrowButton handleClick={showPrevImage} degree="rotate(135deg)" percentage="10%" />
+				<LightBoxImage regular={imageToShow.urls.regular} description={imageToShow.description} />
+				<ArrowButton handleClick={showNextImage} degree="rotate(-45deg)" percentage="20%" />
+				<Overlay imageMetaData={imageToShow} />
+			</div>
 		</div>
 	);
 };

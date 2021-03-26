@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
-	image: { objectFit: 'cover', cursor: 'pointer',  },
+	image: { objectFit: 'cover', cursor: 'pointer' },
 });
 
 const PhotoListDetail = ({ image, showImage }) => {
@@ -20,7 +20,6 @@ const PhotoListDetail = ({ image, showImage }) => {
 			/>
 		);
 	};
-	/* TODO: spinner if no image data */
 	if (image.urls.regular) {
 		return renderImageDetail();
 	} else {
