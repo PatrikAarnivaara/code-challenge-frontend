@@ -1,7 +1,7 @@
 import React from 'react';
 import ArrowButton from '../../UI/ArrowButton';
 import LightBoxImage from '../../UI/LightBoxImage';
-import Overlay from '../../UI/Overlay';
+import DisplayContent from '../DisplayContent';
 import CloseButton from '../../UI/CloseButton';
 import { createUseStyles } from 'react-jss';
 
@@ -22,6 +22,10 @@ const useStyles = createUseStyles({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
+	},
+	overlay: {
+		position: 'absolute',
+		bottom: '10%',
 	},
 });
 
@@ -51,13 +55,15 @@ const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 	};
 
 	return (
-		<div className={classes.lightbox} onClick={hideLightBox}>
+		<div className={classes.lightbox} /* onClick={hideLightBox} */>
 			<CloseButton handleClose={hideLightBox} />
 			<div className={classes.controls}>
-				<ArrowButton handleClick={showPrevImage} degree="rotate(135deg)" percentage="10%" />
+				<ArrowButton handleClick={showPrevImage} degree="rotate(135deg)" percentage="20%" />
 				<LightBoxImage regular={imageToShow.urls.regular} description={imageToShow.description} />
 				<ArrowButton handleClick={showNextImage} degree="rotate(-45deg)" percentage="20%" />
-				<Overlay imageMetaData={imageToShow} />
+			</div>
+			<div className={classes.overlay}>
+			<DisplayContent imageMetaData={imageToShow}  />
 			</div>
 		</div>
 	);
