@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CapitalizeFirstLetter } from '../utilities/CapitalizeFirstLetter';
+import info from '../assets/info.svg';
 import dayjs from 'dayjs';
 import { createUseStyles } from 'react-jss';
 
@@ -10,22 +11,18 @@ const useStyles = createUseStyles({
 		padding: '1em',
 	},
 	button: {
-		color: 'white',
 		backgroundColor: 'Transparent',
 		border: 'none',
 		outline: 'none',
 		fontSize: '2rem',
-		padding: '1em',
+		/* padding: '1em', */
 	},
 	content: {
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
 		background: 'rgba(0, 0, 0, 0.5)',
-		padding: '1em',
-		opacity: '1',
-		transition: 'all 0.5s ease-out',
-		WebkitTransition: 'all 0.5s ease-out',
+		padding: '0.5em',
 		textDecoration: 'none',
 	},
 });
@@ -44,7 +41,7 @@ const DisplayContent = ({ imageMetaData }) => {
 						setMetaData(true);
 					}}
 				>
-					{!metaData ? 'i' : ''}
+					{!metaData ? <img src={info} alt="info icon" /> : ''}
 				</button>
 				{metaData ? (
 					<section
