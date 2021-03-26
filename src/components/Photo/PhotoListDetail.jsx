@@ -14,13 +14,13 @@ const PhotoListDetail = ({ image, showImage }) => {
 			<img
 				className={classes.image}
 				onClick={() => showImage(image)}
-				src={urls.regular}
+				src={urls.small}
 				alt={description}
 				style={{ width: '100%', height: '15.625rem' }}
 			/>
 		);
 	};
-	if (image.urls.regular) {
+	if (image.urls.small) {
 		return renderImageDetail();
 	} else {
 		return <span>No images yet</span>;
