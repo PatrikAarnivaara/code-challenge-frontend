@@ -27,6 +27,7 @@ function App() {
 		try {
 			const response = await unsplash.get('photos?auto=format');
 			if (response.status === 200) {
+				console.log(response.data)
 				setImages([...images, ...response.data]);
 				setIsLoaded(true);
 			}
@@ -46,7 +47,7 @@ function App() {
 			<InfiniteScroll
 				pageStart={0}
 				loadMore={getPhotosFromUnsplash}
-				hasMore={true || false}
+				hasMore={true}
 				loader={<GridLoader key={0} css={override} />}
 			>
 				{loaded ? <Photo images={images} /> : ''}
