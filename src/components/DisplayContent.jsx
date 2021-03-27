@@ -9,6 +9,7 @@ const useStyles = createUseStyles({
 		color: 'white',
 		fontSize: '1rem',
 		padding: '1em',
+		cursor: 'pointer',
 	},
 	button: {
 		backgroundColor: 'Transparent',

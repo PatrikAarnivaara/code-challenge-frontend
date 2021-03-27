@@ -25,7 +25,7 @@ function App() {
 
 	const getPhotosFromUnsplash = async () => {
 		try {
-			const response = await unsplash.get('photos');
+			const response = await unsplash.get('photos?auto=format');
 			if (response.status === 200) {
 				setImages([...images, ...response.data]);
 				setIsLoaded(true);
