@@ -38,20 +38,21 @@ function App() {
 	};
 
 	useEffect(() => {
-		getPhotosFromUnsplash();
+	/* 	getPhotosFromUnsplash(); */
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
 		<div className={classes.container}>
-			<InfiniteScroll
+			<p>HEJ</p>
+			{/* <InfiniteScroll
 				pageStart={0}
 				loadMore={getPhotosFromUnsplash}
 				hasMore={true}
 				loader={<GridLoader key={0} css={override} />}
 			>
 				{loaded ? <Photo images={images} /> : ''}
-			</InfiniteScroll>
+			</InfiniteScroll> */}
 		</div>
 	);
 }

@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
 const PhotoListDetail = ({ image, showImage }) => {
 	const classes = useStyles();
 	const { urls, description } = image;
-	console.log(urls);
+	console.log(urls.small + '&auto=format');
 
 	const renderImageDetail = () => {
 		return (
