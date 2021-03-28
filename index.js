@@ -1,14 +1,15 @@
- const express = require('express');
- const app = express();
+const express = require('express');
+const cors = require('cors');
+const app = express();
 
- //Below code is to point to your react build folder which you will keep inside server folder inside client folder
+app.use(cors());
 
- let root = path.join(__dirname, 'client/build/')
- app.use(express.static(root))
- 
- //this is the routing which will redirect your server url to react build file
- app.get("*",(req,res)=>{
-    res.sendFile(path.join(__dirname, '/client/build/index.html'));
- })
+const port = process.env.PORT || 4000;
+/* let root = path.join(__dirname, 'client/build/');
+app.use(express.static(root)); */
 
- app.listen(process.env.PORT || 3000);
+app.get('/', (req, res) => {
+	res.send({ exampleMessage: 'REacT!' });
+});
+
+app.listen(port, () => console.log(`App is live on port ${port}!`));
