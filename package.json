@@ -1,0 +1,8 @@
+{
+  "name": "code-challenge-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:PatrikAarnivaara/code-challenge-frontend.git",
+  "author": "Patrik Aarnivaara <patrikaarnivaara@gmail.com>",
+  "license": "MIT"
+}
