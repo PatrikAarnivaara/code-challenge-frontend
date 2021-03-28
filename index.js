@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 
 const port = process.env.PORT || 4000;
-
+const path = require('path');
 let root = path.join(__dirname, 'client/build/');
 app.use(express.static(root));
 
