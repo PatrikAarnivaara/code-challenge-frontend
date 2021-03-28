@@ -1,7 +1,7 @@
 import React from 'react';
 import ArrowButton from '../../UI/ArrowButton';
 import LightBoxImage from '../../UI/LightBoxImage';
-import Overlay from '../../UI/Overlay';
+import DisplayContent from '../DisplayContent';
 import CloseButton from '../../UI/CloseButton';
 import { createUseStyles } from 'react-jss';
 
@@ -14,11 +14,18 @@ const useStyles = createUseStyles({
 		width: '100%',
 		height: '100%',
 		backgroundColor: 'rgba(255, 255, 255, 0.5)',
-		display: 'grid',
-		gridTemplateColumns: 'repeat(3, 1fr)',
-		gridGap: '1em',
+		display: 'flex',
 		alignItems: 'center',
-		justifyItems: 'center',
+		justifyContent: 'center',
+	},
+	controls: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	overlay: {
+		position: 'absolute',
+		bottom: '10%',
 	},
 });
 
@@ -48,12 +55,16 @@ const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 	};
 
 	return (
-		<div className={classes.lightbox} onClick={hideLightBox}>
+		<div className={classes.lightbox} /* onClick={hideLightBox} */>
 			<CloseButton handleClose={hideLightBox} />
-			<ArrowButton handleClick={showPrevImage} degree="rotate(135deg)" />
-			<LightBoxImage regular={imageToShow.urls.regular} description={imageToShow.description} />
-			<ArrowButton handleClick={showNextImage} degree="rotate(-45deg)" />
-			<Overlay imageMetaData={imageToShow} />
+			<div className={classes.controls}>
+				<ArrowButton handleClick={showPrevImage} degree="rotate(135deg)" percentage="20%" />
+				<LightBoxImage regular={imageToShow.urls.regular} description={imageToShow.description} />
+				<ArrowButton handleClick={showNextImage} degree="rotate(-45deg)" percentage="20%" />
+			</div>
+			<div className={classes.overlay}>
+			<DisplayContent imageMetaData={imageToShow}  />
+			</div>
 		</div>
 	);
 };

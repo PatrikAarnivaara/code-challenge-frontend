@@ -3,12 +3,13 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
 	close: {
-		color: '#666',
+		color: 'white',
 		position: 'absolute',
-		top: '10px',
-		right: '25px',
+		top: '0.5em',
+		right: '1em',
 		fontSize: '35px',
 		fontWeight: 'bold',
+		opacity: '0.8',
 		'&:hover': {
 			color: '#999',
 			textDecoration: 'none',
