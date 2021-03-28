@@ -16,6 +16,7 @@ const useStyles = createUseStyles({
 		border: 'none',
 		outline: 'none',
 		fontSize: '2rem',
+		cursor: 'pointer'
 		/* padding: '1em', */
 	},
 	content: {
