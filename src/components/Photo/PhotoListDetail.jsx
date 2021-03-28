@@ -8,13 +8,14 @@ const useStyles = createUseStyles({
 const PhotoListDetail = ({ image, showImage }) => {
 	const classes = useStyles();
 	const { urls, description } = image;
+	console.log(urls);
 
 	const renderImageDetail = () => {
 		return (
 			<img
 				className={classes.image}
 				onClick={() => showImage(image)}
-				src={urls.small}
+				src={urls.small + '&auto=compress'}
 				alt={description}
 				style={{ width: '100%', height: '250px' }}
 			/>
