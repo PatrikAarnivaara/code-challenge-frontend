@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
 	close: {
-		color: 'white',
+		color: 'black',
 		position: 'absolute',
 		top: '0.4em',
 		right: '1em',
