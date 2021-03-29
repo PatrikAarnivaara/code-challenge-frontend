@@ -9,6 +9,7 @@ Unsplash
 * Node/Express
 * JEST
 * CSSinJS
+* Prettier
 
 ## Features
 * Responsive image grid
