@@ -1,7 +1,7 @@
 # Image Grid
 Application for showing images in a grid overview. Clicking an image opens up a large view of the image in a lightbox modal. Where an info button can be clicked to view info about each image. Browsing images in the Lightbox view is done by clicking left and right arrows.
 
-##API
+## API
 Unsplash
 
 ## Technologies
