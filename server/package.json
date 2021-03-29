@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "server.js",
 	"engines": {
-		"node": "12.x",
+		"node": "14.x",
 		"yarn": "1.x"
 	},
 	"repository": "git@github.com:PatrikAarnivaara/code-challenge-frontend.git",
@@ -17,7 +17,6 @@
 	},
 	"scripts": {
 		"start": "node server.js",
-		"heroku-postbuild": "YARN_CONFIG_PRODUCTION=false",
-		"build": "yarn install --prefix client && yarn build --prefix client"
+		"heroku-postbuild": "cd client && yarn install && yarn build"
 	}
 }

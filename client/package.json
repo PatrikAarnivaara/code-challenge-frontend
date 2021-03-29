@@ -1,52 +1,53 @@
 {
-  "name": "code-challenge-frontend",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.1.5",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "axios": "^0.21.1",
-    "dayjs": "^1.10.4",
-    "dotenv": "^8.2.0",
-    "enzyme-adapter-react-16": "^1.15.6",
-    "enzyme-to-json": "^3.6.1",
-    "loading-attribute-polyfill": "^2.0.0-rc.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-infinite-scroller": "^1.2.4",
-    "react-jss": "^10.6.0",
-    "react-scripts": "4.0.3",
-    "react-spinners": "^0.10.6",
-    "web-vitals": "^1.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "enzyme": "^3.11.0",
-    "react-test-renderer": "^17.0.1"
-  }
+	"name": "code-challenge-frontend",
+	"version": "0.1.0",
+	"private": true,
+	"proxy": "http://localhost:5000",
+	"dependencies": {
+		"@emotion/react": "^11.1.5",
+		"@testing-library/jest-dom": "^5.11.4",
+		"@testing-library/react": "^11.1.0",
+		"@testing-library/user-event": "^12.1.10",
+		"axios": "^0.21.1",
+		"dayjs": "^1.10.4",
+		"dotenv": "^8.2.0",
+		"enzyme-adapter-react-16": "^1.15.6",
+		"enzyme-to-json": "^3.6.1",
+		"loading-attribute-polyfill": "^2.0.0-rc.0",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-infinite-scroller": "^1.2.4",
+		"react-jss": "^10.6.0",
+		"react-scripts": "4.0.3",
+		"react-spinners": "^0.10.6",
+		"web-vitals": "^1.0.1"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"enzyme": "^3.11.0",
+		"react-test-renderer": "^17.0.1"
+	}
 }
