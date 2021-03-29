@@ -17,6 +17,7 @@
 	},
 	"scripts": {
 		"start": "node server.js",
-		"heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn install --prefix client && yarn build --prefix client"
+		"heroku-postbuild": "YARN_CONFIG_PRODUCTION=false",
+		"build": "yarn install --prefix client && yarn build --prefix client"
 	}
 }
