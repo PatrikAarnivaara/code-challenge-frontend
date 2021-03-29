@@ -14,6 +14,8 @@
 	"scripts": {
 		"client": "yarn --cwd client run start",
 		"server": "nodemon index",
-		"start": "concurrently \"yarn run server\" \"yarn run client\""
+		"start": "concurrently \"yarn run server\" \"yarn run client\"",
+		"heroku-postbuild": "YARN_CONFIG_PRODUCTION=false",
+		"build": "yarn install --prefix client && yarn build --prefix client"
 	}
 }
