@@ -13,5 +13,5 @@ app.use('/client', express.static(path.join(__dirname, 'build')))
 	res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 }); */
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`App is live on port ${port}!`));
