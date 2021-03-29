@@ -22,6 +22,7 @@ function App() {
 	const classes = useStyles();
 	const [images, setImages] = useState([]);
 	const [loaded, setIsLoaded] = useState(false);
+	const [errorMessage, setErrorMessage] = useState('');
 
 	const getPhotosFromUnsplash = async () => {
 		try {
@@ -29,10 +30,13 @@ function App() {
 			if (response.status === 200) {
 				setImages([...images, ...response.data]);
 				setIsLoaded(true);
+				if (errorMessage !== '') {
+					setErrorMessage('');
+				}
 			}
 		} catch (error) {
 			console.log(error);
-			/* add message to client */
+			setErrorMessage('Something went wrong while trying to fetch images from Unsplash');
 		}
 	};
 
@@ -51,6 +55,7 @@ function App() {
 			>
 				{loaded ? <Photo images={images} /> : ''}
 			</InfiniteScroll>
+			<h3>{errorMessage}</h3>
 		</div>
 	);
 }
