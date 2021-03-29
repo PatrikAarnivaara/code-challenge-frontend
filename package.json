@@ -1,7 +1,11 @@
 {
 	"name": "code-challenge-frontend",
 	"version": "1.0.0",
-	"main": "index.js",
+	"main": "server.js",
+	"engines": {
+		"node": "12.x",
+		"npm": "6.x"
+	},
 	"repository": "git@github.com:PatrikAarnivaara/code-challenge-frontend.git",
 	"author": "Patrik Aarnivaara <patrikaarnivaara@gmail.com>",
 	"license": "MIT",
@@ -12,9 +16,7 @@
 		"nodemon": "^2.0.7"
 	},
 	"scripts": {
-		"client": "yarn --cwd client run start",
-		"server": "nodemon index",
-		"start": "concurrently \"yarn run server\" \"yarn run client\"",
+		"start": "node server.js",
 		"heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn install --prefix client && yarn build --prefix client"
 	}
 }
