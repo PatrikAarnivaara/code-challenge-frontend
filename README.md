@@ -6,6 +6,7 @@ Unsplash
 
 ## Technologies
 * ReactJS
+* Node/Express
 * JEST
 * CSSinJS
 
