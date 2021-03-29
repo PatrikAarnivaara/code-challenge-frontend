@@ -13,7 +13,7 @@ describe('The Unsplash API', () => {
 
     test('returns an array of images', async () => {
         const response = await unsplash.get('photos');
-        expect(response.data).toHaveLength(20);
+        expect(response.data).toHaveLength(10);
     });
 
     test('which should contain the properties id and urls,', async () => {

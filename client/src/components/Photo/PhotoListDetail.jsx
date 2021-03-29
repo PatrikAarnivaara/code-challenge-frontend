@@ -7,21 +7,18 @@ const useStyles = createUseStyles({
 
 const PhotoListDetail = ({ image, showImage }) => {
 	const classes = useStyles();
-	const { urls, description } = image;
-	console.log(urls.small + '&auto=format');
-
 	const renderImageDetail = () => {
 		return (
 			<img
 				className={classes.image}
 				onClick={() => showImage(image)}
-				src={urls.small + '&auto=format'}
-				alt={description}
+				src={image.urls.small + '&auto=format'}
+				alt={image.description}
 				style={{ width: '100%', height: '250px' }}
 			/>
 		);
 	};
-	if (image.urls.regular) {
+	if (image.urls.small) {
 		return renderImageDetail();
 	} else {
 		return <span>No images yet</span>;

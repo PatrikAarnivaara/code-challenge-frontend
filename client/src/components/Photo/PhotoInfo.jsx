@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { CapitalizeFirstLetter } from '../utilities/CapitalizeFirstLetter';
-import info from '../assets/info.svg';
+import { CapitalizeFirstLetter } from '../../utilities/CapitalizeFirstLetter';
+import info from '../../assets/info.svg';
 import dayjs from 'dayjs';
 import { createUseStyles } from 'react-jss';
 
@@ -16,8 +16,7 @@ const useStyles = createUseStyles({
 		border: 'none',
 		outline: 'none',
 		fontSize: '2rem',
-		cursor: 'pointer'
-		/* padding: '1em', */
+		cursor: 'pointer',
 	},
 	content: {
 		display: 'flex',
@@ -29,7 +28,7 @@ const useStyles = createUseStyles({
 	},
 });
 
-const DisplayContent = ({ imageMetaData }) => {
+const PhotoInfo = ({ imageMetaData }) => {
 	const classes = useStyles();
 	const [metaData, setMetaData] = useState(false);
 	const year = dayjs(imageMetaData.created_at).format('YYYY');
@@ -68,4 +67,4 @@ const DisplayContent = ({ imageMetaData }) => {
 	);
 };
 
-export default DisplayContent;
+export default PhotoInfo;

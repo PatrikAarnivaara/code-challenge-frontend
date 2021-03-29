@@ -8,7 +8,7 @@ const ArrowButton = ({ handleClick, degree, percentage }) => {
 			width: 'auto',
 			backgroundColor: 'Transparent',
 			border: 'none',
-			padding: '1em',
+			padding: '1.2em',
 			textAlign: 'center',
 			margin: '0 -60px',
 			outline: 'none',

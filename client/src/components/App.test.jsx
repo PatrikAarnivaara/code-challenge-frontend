@@ -1,13 +1,8 @@
-import axios from 'axios';
 import App from './App';
+import { shallow } from 'enzyme';
 
-jest.mock('axios');
-
-test('xxx', () => {
-	const images = [{ url: 'http' }];
-	const response = { data: images };
-	axios.get.mockResolvedValue(response);
-
-	// axios.get.mockImplementation(() => Promise.resolve(resp))
-	return App.getPhotosFromUnsplash().then((data) => expect(data).toEqual(images));
-});
+describe('First React component test with Enzyme', () => {
+	it('renders without crashing', () => {
+	   shallow(<App />);
+	 });
+ });

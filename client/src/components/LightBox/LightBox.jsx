@@ -1,7 +1,7 @@
 import React from 'react';
 import ArrowButton from '../../UI/ArrowButton';
 import LightBoxImage from '../../UI/LightBoxImage';
-import DisplayContent from '../DisplayContent';
+import PhotoInfo from '../Photo/PhotoInfo';
 import CloseButton from '../../UI/CloseButton';
 import { createUseStyles } from 'react-jss';
 
@@ -55,7 +55,7 @@ const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 	};
 
 	return (
-		<div className={classes.lightbox} /* onClick={hideLightBox} */>
+		<div className={classes.lightbox}>
 			<CloseButton handleClose={hideLightBox} />
 			<div className={classes.controls}>
 				<ArrowButton handleClick={showPrevImage} degree="rotate(135deg)" percentage="20%" />
@@ -63,7 +63,7 @@ const LightBox = ({ imageToShow, setImageToShow, hideLightBox, images }) => {
 				<ArrowButton handleClick={showNextImage} degree="rotate(-45deg)" percentage="20%" />
 			</div>
 			<div className={classes.overlay}>
-			<DisplayContent imageMetaData={imageToShow}  />
+				<PhotoInfo imageMetaData={imageToShow} />
 			</div>
 		</div>
 	);

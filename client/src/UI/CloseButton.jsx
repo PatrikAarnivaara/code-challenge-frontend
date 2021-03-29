@@ -5,7 +5,7 @@ const useStyles = createUseStyles({
 	close: {
 		color: 'white',
 		position: 'absolute',
-		top: '0.5em',
+		top: '0.4em',
 		right: '1em',
 		fontSize: '35px',
 		fontWeight: 'bold',
