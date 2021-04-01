@@ -3,6 +3,7 @@ import PhotoListDetail from './PhotoListDetail';
 import LightBox from '../LightBox/LightBox';
 import { createUseStyles } from 'react-jss';
 
+
 const useStyles = createUseStyles({
 	grid: {
 		display: 'grid',
