@@ -24,16 +24,18 @@ function App() {
 	const [loaded, setIsLoaded] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 
-	const getPhotosFromUnsplash = async () => {
+	const getPhotosFromUnsplash = () => {
 		try {
-			const response = await unsplash.get('photos');
-			if (response.status === 200) {
-				setImages([...images, ...response.data]);
-				setIsLoaded(true);
-				if (errorMessage !== '') {
-					setErrorMessage('');
+			unsplash.get('photos').then((response) => {
+				if (response.status === 200) {
+					setImages([...images, ...response.data]);
+					setIsLoaded(true);
+					console.log(response.data)
+					if (errorMessage !== '') {
+						setErrorMessage('');
+					}
 				}
-			}
+			});
 		} catch (error) {
 			console.log(error);
 			setErrorMessage('Something went wrong while trying to fetch images from Unsplash');
@@ -45,17 +47,21 @@ function App() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	if (!images) {
+		return <GridLoader />;
+	}
+
 	return (
 		<div className={classes.container}>
 			<InfiniteScroll
-				pageStart={0}
-				loadMore={getPhotosFromUnsplash}
-				hasMore={true}
-				loader={<GridLoader key={0} css={override} />}
-			>
-				{loaded ? <Photo images={images} /> : ''}
-			</InfiniteScroll>
-			<h3>{errorMessage}</h3>
+                pageStart={0}
+                loadMore={getPhotosFromUnsplash}
+                hasMore={true}
+                loader={<GridLoader key={0} css={override} />}
+            >
+                {loaded ? <Photo images={images} /> : ''}
+            </InfiniteScroll>
+            <h3>{errorMessage}</h3>
 		</div>
 	);
 }
