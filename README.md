@@ -25,7 +25,6 @@ Unsplash
 * Reusable modal component that could wrap content in LightBox
 * Mobile view swipe between images in Lightbox instead of clicking 
 * Redux or Context can simplify and improve separation of concerns 
-* Get Blurhash library to work for preloading images and improve performance
 
 ## Setup
 1. Clone repo and open in optional IDE. 
