@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import placeholderImage from '../../assets/grey-square-placeholder.svg';
+import placeholderImage from '../../shared/assets/images/grey-square-placeholder.svg';
 
 const useStyles = createUseStyles({
 	image: { objectFit: 'cover', cursor: 'pointer' },
@@ -10,24 +10,26 @@ const useStyles = createUseStyles({
 
 const PhotoListDetail = ({ image, showImage }) => {
 	const classes = useStyles();
-	const renderImageDetail = () => {
+
+	if (!image.urls.small) {
 		return (
-			<LazyLoadImage
-				effect="blur"
-				className={classes.image}
-				onClick={() => showImage(image)}
-				src={image.urls.small + '&auto=format'}
-				alt={image.alt_description}
-				style={{ width: '100%', height: '250px' }}
-				placeholderSrc={placeholderImage}
-			/>
+			<div>
+				<span>No images yet</span>
+			</div>
 		);
-	};
-	if (image.urls.small) {
-		return renderImageDetail();
-	} else {
-		return <span>No images yet</span>;
 	}
+
+	return (
+		<LazyLoadImage
+			effect="blur"
+			className={classes.image}
+			onClick={() => showImage(image)}
+			src={image.urls.small + '&auto=format'}
+			alt={image.alt_description}
+			style={{ width: '100%', height: '250px' }}
+			placeholderSrc={placeholderImage}
+		/>
+	);
 };
 
 export default PhotoListDetail;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import GridLoader from 'react-spinners/GridLoader';
-import unsplash from '../api/unsplash';
+import unsplash from '../shared/api/unsplash';
 import Photo from './Photo/Photo';
 import { createUseStyles } from 'react-jss';
 import { css } from '@emotion/react';
@@ -18,7 +18,7 @@ const override = css`
 	margin: 0 auto;
 `;
 
-function App() {
+const App = () => {
 	const classes = useStyles();
 	const [images, setImages] = useState([]);
 	const [loaded, setIsLoaded] = useState(false);
@@ -30,7 +30,7 @@ function App() {
 				if (response.status === 200) {
 					setImages([...images, ...response.data]);
 					setIsLoaded(true);
-					console.log(response.data)
+					console.log(response.data);
 					if (errorMessage !== '') {
 						setErrorMessage('');
 					}
@@ -54,16 +54,17 @@ function App() {
 	return (
 		<div className={classes.container}>
 			<InfiniteScroll
-                pageStart={0}
-                loadMore={getPhotosFromUnsplash}
-                hasMore={true}
-                loader={<GridLoader key={0} css={override} />}
-            >
-                {loaded ? <Photo images={images} /> : ''}
-            </InfiniteScroll>
-            <h3>{errorMessage}</h3>
+				pageStart={0}
+				loadMore={getPhotosFromUnsplash}
+				hasMore={true}
+				loader={<GridLoader key={0} css={override} />}
+			>
+				{loaded ? <Photo images={images} /> : ''}
+			</InfiniteScroll>
+
+			<h3>{errorMessage}</h3>
 		</div>
 	);
-}
+};
 
 export default App;

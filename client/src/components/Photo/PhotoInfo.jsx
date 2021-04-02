@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { CapitalizeFirstLetter } from '../../utilities/CapitalizeFirstLetter';
-import info from '../../assets/info.svg';
+import { CapitalizeFirstLetter } from '../../shared/services/CapitalizeFirstLetter';
+import info from '../../shared/assets/images/info.svg';
 import dayjs from 'dayjs';
 import { createUseStyles } from 'react-jss';
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import ArrowButton from '../../UI/ArrowButton';
-import LightBoxImage from '../../UI/LightBoxImage';
+import ArrowButton from '../Button/ArrowButton';
+import LightBoxImage from './LightBoxImage';
 import PhotoInfo from '../Photo/PhotoInfo';
-import CloseButton from '../../UI/CloseButton';
+import CloseButton from '../Button/CloseButton';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
