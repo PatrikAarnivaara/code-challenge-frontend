@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default axios.create({
 	baseURL: 'https://api.unsplash.com/',
-	params: { per_page: 10 },
+	params: { per_page: 15 },
 	headers: {
 		Authorization: process.env.REACT_APP_UNSPLASH_CLIENT_ID,
 	},

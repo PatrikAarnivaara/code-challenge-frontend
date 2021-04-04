@@ -53,7 +53,13 @@ const App = () => {
 	}
 
 	return (
-		<Suspense fallback={<div>Loooooading</div>}>
+		<Suspense
+			fallback={
+				<div>
+					<GridLoader />
+				</div>
+			}
+		>
 			<div className={classes.container}>
 				<InfiniteScroll
 					pageStart={0}
