@@ -1,11 +1,14 @@
-import React, { useEffect, useState, Suspense, lazy } from 'react';
-import InfiniteScroll from 'react-infinite-scroller';
-import GridLoader from 'react-spinners/GridLoader';
+import React, { useEffect, useState } from 'react';
+import Photo from './Photo/Photo'
+/* import InfiniteScroll from 'react-infinite-scroller';
+ */import GridLoader from 'react-spinners/GridLoader';
 import unsplash from '../shared/api/unsplash';
 import { createUseStyles } from 'react-jss';
 import { css } from '@emotion/react';
+import loadable from '@loadable/component';
 
-const Photo = lazy(() => import('./Photo/Photo'));
+const InfiniteScroll = loadable(()=> import('react-infinite-scroller'))
+/* const Photo = loadable(() => import('./Photo/Photo')); */
 
 const useStyles = createUseStyles({
 	container: {
@@ -53,26 +56,18 @@ const App = () => {
 	}
 
 	return (
-		<Suspense
-			fallback={
-				<div>
-					<GridLoader />
-				</div>
-			}
-		>
-			<div className={classes.container}>
-				<InfiniteScroll
-					pageStart={0}
-					loadMore={getPhotosFromUnsplash}
-					hasMore={true}
-					loader={<GridLoader key={0} css={override} />}
-				>
-					{loaded ? <Photo images={images} /> : ''}
-				</InfiniteScroll>
+		<div className={classes.container}>
+			<InfiniteScroll
+				pageStart={0}
+				loadMore={getPhotosFromUnsplash}
+				hasMore={true}
+				loader={<GridLoader key={0} css={override} />}
+			>
+				{loaded ? <Photo images={images} /> : ''}
+			</InfiniteScroll>
 
-				<h3>{errorMessage}</h3>
-			</div>
-		</Suspense>
+			<h3>{errorMessage}</h3>
+		</div>
 	);
 };
 
