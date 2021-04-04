@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { CapitalizeFirstLetter } from '../../shared/services/CapitalizeFirstLetter';
 import info from '../../shared/assets/images/info.svg';
 import dayjs from 'dayjs';
 import { createUseStyles } from 'react-jss';
@@ -54,7 +53,7 @@ const PhotoInfo = ({ imageMetaData }) => {
 						<span>{imageMetaData.user.name}</span>
 						<span>
 							{imageMetaData.user.location
-								? CapitalizeFirstLetter(imageMetaData.user.location)
+								? imageMetaData.user.location
 								: 'No location found'}
 						</span>
 						<span>{year}</span>

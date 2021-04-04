@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Photo from './Photo/Photo'
-/* import InfiniteScroll from 'react-infinite-scroller';
- */import GridLoader from 'react-spinners/GridLoader';
+import Photo from './Photo/Photo';
+import GridLoader from 'react-spinners/GridLoader';
 import unsplash from '../shared/api/unsplash';
 import { createUseStyles } from 'react-jss';
 import { css } from '@emotion/react';
 import loadable from '@loadable/component';
 
-const InfiniteScroll = loadable(()=> import('react-infinite-scroller'))
-/* const Photo = loadable(() => import('./Photo/Photo')); */
+const InfiniteScroll = loadable(() => import('react-infinite-scroller'));
 
 const useStyles = createUseStyles({
 	container: {
@@ -34,7 +32,6 @@ const App = () => {
 				if (response.status === 200) {
 					setImages([...images, ...response.data]);
 					setIsLoaded(true);
-					console.log(response.data);
 					if (errorMessage !== '') {
 						setErrorMessage('');
 					}
