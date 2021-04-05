@@ -14,8 +14,8 @@
 		"express": "^4.17.1"
 	},
 	"scripts": {
-		"start": "node server.js",
-		"build": "cd client && yarn install && yarn build",
-		"heroku-postbuild": "node server.js"
+		"start": "node server.bundle.js",
+		"build": "webpack",
+		"heroku-postbuild": "node server.bundle.js"
 	}
 }
