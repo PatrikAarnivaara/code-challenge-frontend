@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-
+/*  */
 const ArrowButton = ({ handleClick, degree, percentage }) => {
 	const useStyles = createUseStyles({
 		button: {
