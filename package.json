@@ -15,7 +15,7 @@
 	}, 
 	"scripts": {
 		"start": "node server.js",
-		"build": "webpack",
-		"heroku-postbuild": "echo Skip build on Heroku"
+		"build": "cd client && yarn install && yarn build",
+		"heroku-postbuild": "cd client && yarn install && yarn build"
 	}
 }
