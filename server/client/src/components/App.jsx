@@ -28,12 +28,14 @@ const App = () => {
 	const [errorMessage, setErrorMessage] = useState('');
 
 	const getPhotosFromUnsplash = () => {
+		/* search/photos?c&query=""&page=${page}` */
 		try {
-			unsplash.get(`photos?&page=${page}`).then((response) => {
+			unsplash.get(`photos?page${page}`).then((response) => {
 				if (response.status === 200) {
 					setImages([...images, ...response.data]);
 					setIsLoaded(true);
 					setPage(page + 1);
+					console.log(page)
 					if (errorMessage !== '') {
 						setErrorMessage('');
 					}
