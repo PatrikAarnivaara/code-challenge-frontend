@@ -41,4 +41,3 @@ Project is: _in progress_ a deployed version can be viewed at this url: https://
 
 ## Contact
 Created by Patrik Aarnivaara
-
