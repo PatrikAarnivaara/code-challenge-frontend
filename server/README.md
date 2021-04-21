@@ -18,7 +18,8 @@ Unsplash
 * Infinite scroll
 * Unit testing
 
-## Possible improvements
+## Improvements
+* Performance: Speed and Largest Contentful Paint needs improvements, 
 * Improved and further unit testing, e.g. mock api call and more
 * CSSinJS: theme and reusability
 * UI: animated transitions, improve LightBox layout, possibility to hide arrows and info button/caption, show skeleton loaders on preload 
