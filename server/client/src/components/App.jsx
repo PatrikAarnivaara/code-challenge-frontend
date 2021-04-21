@@ -22,23 +22,24 @@ const override = css`
 
 const App = () => {
 	const classes = useStyles();
+	const [page, setPage] = useState(1);
 	const [images, setImages] = useState([]);
 	const [loaded, setIsLoaded] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 
 	const getPhotosFromUnsplash = () => {
 		try {
-			unsplash.get('photos').then((response) => {
+			unsplash.get(`photos?&page=${page}`).then((response) => {
 				if (response.status === 200) {
 					setImages([...images, ...response.data]);
 					setIsLoaded(true);
+					setPage(page + 1);
 					if (errorMessage !== '') {
 						setErrorMessage('');
 					}
 				}
 			});
 		} catch (error) {
-			console.log(error);
 			setErrorMessage('Something went wrong while trying to fetch images from Unsplash');
 		}
 	};
