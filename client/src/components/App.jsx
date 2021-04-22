@@ -34,7 +34,6 @@ const App = () => {
 					setImages([...images, ...response.data]);
 					setIsLoaded(true);
 					setPage(page + 1);
-					console.log(page)
 					if (errorMessage !== '') {
 						setErrorMessage('');
 					}
