@@ -16,6 +16,7 @@ Unsplash
 * Detailed view of clicked image with caption containing author, location and date.
 * Lightbox modal where images can be viewed in larger scale
 * Infinite scroll
+* Lazy loading
 * Unit testing
 
 ## Improvements
