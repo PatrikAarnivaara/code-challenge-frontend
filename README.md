@@ -19,7 +19,7 @@ Unsplash
 * Unit testing
 
 ## Improvements
-* Performance: Speed and Largest Contentful Paint problems on iOS, 
+* Performance: occasional speed and largest contentful paint issues on iOS 
 * Improved unit testing
 * CSSinJS: theme and reusability
 * UI: animated transitions, improve LightBox layout, possibility to hide arrows and info button/caption
