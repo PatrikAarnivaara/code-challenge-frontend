@@ -19,13 +19,12 @@ Unsplash
 * Unit testing
 
 ## Improvements
-* Performance: Speed and Largest Contentful Paint needs improvements, 
-* Improved and further unit testing, e.g. mock api call and more
+* Performance: occasional speed and largest contentful paint issues on iOS 
+* Improved unit testing
 * CSSinJS: theme and reusability
-* UI: animated transitions, improve LightBox layout, possibility to hide arrows and info button/caption, show skeleton loaders on preload 
-* Reusable modal component that could wrap content in LightBox
-* Mobile view swipe between images in Lightbox instead of clicking 
-* Redux or Context can simplify and improve separation of concerns 
+* UI: animated transitions, improve LightBox layout, possibility to hide arrows and info button/caption
+* Reusable modal component that wraps content in LightBox
+* Mobile view swipe between images in Lightbox instead of clicking  
 
 ## Setup
 1. Clone repo and open in optional IDE. 
@@ -37,7 +36,7 @@ Unsplash
 7. Server starts application on localhost:3000
 
 ## Status
-Project is: _in progress_ a deployed version can be viewed at this url: https://limitless-falls-85097.herokuapp.com/
+Project is: _completed_ a deployed version can be viewed at this url: https://limitless-falls-85097.herokuapp.com/
 
 ## Contact
 Created by Patrik Aarnivaara
